@@ -1,122 +1,664 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+
+    font-family: "Inter", Arial, sans-serif;
+
+    color: #172033;
 
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        linear-gradient(
+            rgba(15, 23, 42, 0.42),
+            rgba(15, 23, 42, 0.42)
+        ),
         url("hinhnen9.27.jpg");
 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
     min-height: 100vh;
 }
 
+
+/* ============================= */
 /* THANH MENU */
+/* ============================= */
 
 nav {
-    background: rgba(30, 41, 59, 0.9);
-    padding: 15px;
-    text-align: center;
-
     position: sticky;
     top: 0;
+
     z-index: 1000;
+
+    background: rgba(15, 23, 42, 0.88);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-nav a {
+.nav-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    min-height: 70px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* LOGO */
+
+.logo {
     color: white;
+
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
 
-    display: inline-block;
-    transition: 0.3s;
+    font-size: 22px;
+    font-weight: 800;
+
+    white-space: nowrap;
 }
 
-nav a:hover {
-    color: #93c5fd;
+
+/* MENU */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+
+    text-decoration: none;
+
+    padding: 10px 13px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-1px);
+}
+
+.nav-links a.active {
+    color: white;
+
+    background: rgba(59, 130, 246, 0.8);
+
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+
+/* NÚT ĐĂNG NHẬP */
+
+.login-button {
+    color: #1e3a8a;
+
+    background: white;
+
+    text-decoration: none;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: 0.25s ease;
+}
+
+.login-button:hover {
     transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+    background: #eff6ff;
 }
 
-/* PHẦN TIÊU ĐỀ */
 
-header {
+/* ============================= */
+/* HERO */
+/* ============================= */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
-    padding: 60px 20px;
-    background: rgba(37, 99, 235, 0.75);
+
+    padding: 70px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 64, 175, 0.82),
+            rgba(37, 99, 235, 0.55)
+        );
+
     color: white;
 }
 
-header h1 {
-    font-size: 40px;
-    margin: 0 0 10px 0;
+.hero-content {
+    max-width: 800px;
 }
 
-header p {
-    font-size: 18px;
+.hero-badge {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    margin-bottom: 20px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+.hero h1 {
     margin: 0;
+
+    font-size: clamp(42px, 7vw, 72px);
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
 }
 
-/* NỘI DUNG */
+.hero p {
+    margin: 18px 0 30px;
+
+    font-size: 20px;
+
+    color: #e0ecff;
+}
+
+
+/* BUTTON */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 20px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.primary-button {
+    color: #1e3a8a;
+
+    background: white;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
+}
+
+.secondary-button {
+    color: white;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+
+    transform: translateY(-3px);
+}
+
+
+/* ============================= */
+/* MAIN */
+/* ============================= */
 
 main {
-    max-width: 1000px;
-    margin: 30px auto;
+    max-width: 1100px;
+
+    margin: 35px auto;
+
     padding: 0 20px;
 }
 
-section {
-    background: rgba(255, 255, 255, 0.92);
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 15px;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+/* ============================= */
+/* THỐNG KÊ */
+/* ============================= */
+
+.stats-section {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    padding: 0;
+
+    background: none;
+
+    box-shadow: none;
 }
 
-section h2 {
-    margin-top: 0;
+.stat-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 18px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-radius: 15px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+
+    transition: 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+
+    font-size: 22px;
+}
+
+.stat-card strong {
+    display: block;
+
+    font-size: 22px;
+
     color: #1e3a8a;
 }
 
-/* DANH SÁCH THÀNH VIÊN */
+.stat-card span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* ============================= */
+/* SECTION */
+/* ============================= */
+
+section {
+    background: rgba(255, 255, 255, 0.94);
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.section-title > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+.section-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 12px;
+
+    font-size: 21px;
+}
+
+.section-title h2 {
+    margin: 0;
+
+    color: #172554;
+
+    font-size: 20px;
+}
+
+.section-title p {
+    margin: 4px 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.view-all {
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================= */
+/* EMPTY CARD */
+/* ============================= */
+
+.empty-card {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: #f8fafc;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 14px;
+}
+
+.empty-icon {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.empty-card h3 {
+    margin: 0 0 8px;
+
+    color: #334155;
+}
+
+.empty-card p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* ============================= */
+/* MÔN HỌC */
+/* ============================= */
+
+.subject-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.subject-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    transition: 0.25s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #93c5fd;
+
+    background: #eff6ff;
+}
+
+.subject-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 12px;
+
+    font-size: 21px;
+}
+
+.subject-card h3 {
+    margin: 0;
+
+    font-size: 16px;
+
+    color: #1e3a8a;
+}
+
+.subject-card p {
+    margin: 4px 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* ============================= */
+/* WELCOME */
+/* ============================= */
+
+.welcome-section {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 246, 255, 0.96),
+            rgba(219, 234, 254, 0.96)
+        );
+}
+
+.welcome-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.welcome-icon {
+    width: 60px;
+    height: 60px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 16px;
+
+    font-size: 28px;
+}
+
+.welcome-content h2 {
+    margin: 0 0 8px;
+
+    color: #1e3a8a;
+}
+
+.welcome-content p {
+    margin: 0;
+
+    color: #475569;
+
+    line-height: 1.6;
+}
+
+
+/* ============================= */
+/* THÀNH VIÊN */
+/* ============================= */
 
 .member-list {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 15px;
+
     margin-top: 20px;
 }
 
 .member {
-    background: rgba(239, 246, 255, 0.95);
+    background: #f8fafc;
+
     padding: 15px;
+
     border-radius: 12px;
 
-    font-weight: bold;
+    font-weight: 600;
+
     color: #1e3a8a;
 
-    border: 2px solid #dbeafe;
+    border: 1px solid #dbeafe;
 
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
 .member:hover {
     transform: translateY(-4px);
-    background: #dbeafe;
+
+    background: #eff6ff;
+
     border-color: #60a5fa;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 7px 16px rgba(37, 99, 235, 0.12);
 }
 
+
+/* ============================= */
 /* THÔNG BÁO */
+/* ============================= */
 
 .notice {
-    background: rgba(239, 246, 255, 0.95);
+    background: #eff6ff;
+
     border-left: 5px solid #2563eb;
 
     padding: 18px;
+
     border-radius: 10px;
 
     margin-top: 15px;
@@ -124,14 +666,20 @@ section h2 {
 
 .notice h3 {
     margin-top: 0;
+
     color: #1e3a8a;
 }
 
-/* LINK TRONG NỘI DUNG */
+
+/* ============================= */
+/* LINK */
+/* ============================= */
 
 section a {
     color: #2563eb;
-    font-weight: bold;
+
+    font-weight: 700;
+
     text-decoration: none;
 }
 
@@ -139,50 +687,169 @@ section a:hover {
     text-decoration: underline;
 }
 
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+    margin-top: 40px;
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    background: rgba(15, 23, 42, 0.9);
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+}
+
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width: 1000px) {
+
+    .nav-container {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        padding: 12px 15px;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .member-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ============================= */
 /* ĐIỆN THOẠI */
+/* ============================= */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
-    nav {
-        padding: 12px 5px;
+    .nav-container {
+        gap: 10px;
     }
 
-    nav a {
-        margin: 5px 6px;
-        font-size: 14px;
+    .logo {
+        font-size: 19px;
     }
 
-    header {
-        padding: 45px 15px;
+    .login-button {
+        padding: 8px 12px;
+
+        font-size: 13px;
     }
 
-    header h1 {
-        font-size: 30px;
+    .nav-links a {
+        padding: 8px 9px;
+
+        font-size: 13px;
     }
 
-    header p {
-        font-size: 16px;
+    .hero {
+        min-height: 430px;
+
+        padding: 55px 15px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 17px;
     }
 
     main {
-        padding: 0 10px;
         margin-top: 20px;
+
+        padding: 0 10px;
     }
 
     section {
         padding: 18px;
+
+        border-radius: 15px;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 13px;
+
+        gap: 8px;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+    .stat-card strong {
+        font-size: 19px;
+    }
+
+    .section-title {
+        align-items: flex-start;
+    }
+
+    .section-title h2 {
+        font-size: 17px;
+    }
+
+    .view-all {
+        font-size: 12px;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr;
     }
 
     .member-list {
         grid-template-columns: 1fr;
     }
-}
 
-/* MÀN HÌNH VỪA */
+    .welcome-content {
+        align-items: flex-start;
+    }
 
-@media (min-width: 701px) and (max-width: 1000px) {
+    .welcome-icon {
+        width: 48px;
+        height: 48px;
 
-    .member-list {
-        grid-template-columns: repeat(2, 1fr);
+        font-size: 22px;
+    }
+
+    .welcome-content h2 {
+        font-size: 18px;
     }
 }
