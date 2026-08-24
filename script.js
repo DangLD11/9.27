@@ -1,5 +1,5 @@
 // ========================================
-// DỮ LIỆU TÀI KHOẢN THỬ NGHIỆM
+// DỮ LIỆU TÀI KHOẢN
 // ========================================
 
 const accounts = [
@@ -36,6 +36,43 @@ const accounts = [
 
 
 // ========================================
+// THÔNG TIN ROLE
+// ========================================
+
+const roleInfo = {
+
+    ADMIN: {
+        icon: "👑",
+        title: "ADMIN",
+        description: "Quản trị viên",
+        className: "role-admin"
+    },
+
+    ULTRA: {
+        icon: "⚡",
+        title: "ULTRA",
+        description: "Thành viên Ultra",
+        className: "role-ultra"
+    },
+
+    MESSI: {
+        icon: "🐐",
+        title: "MESSI",
+        description: "Legendary Member",
+        className: "role-messi"
+    },
+
+    NPC: {
+        icon: "👤",
+        title: "NPC",
+        description: "Thành viên",
+        className: "role-npc"
+    }
+
+};
+
+
+// ========================================
 // LẤY TÀI KHOẢN ĐANG ĐĂNG NHẬP
 // ========================================
 
@@ -44,17 +81,44 @@ const savedUser =
 
 let currentUser = null;
 
+
 if (savedUser) {
 
     try {
 
         currentUser = JSON.parse(savedUser);
 
-    } catch (error) {
+    }
+
+    catch (error) {
 
         localStorage.removeItem("loggedInUser");
 
     }
+
+}
+
+
+// ========================================
+// LẤY THÔNG TIN ROLE
+// ========================================
+
+function getRoleInfo(role) {
+
+    if (roleInfo[role]) {
+
+        return roleInfo[role];
+
+    }
+
+    return {
+
+        icon: "👤",
+        title: role || "MEMBER",
+        description: "Thành viên",
+        className: "role-npc"
+
+    };
 
 }
 
@@ -71,42 +135,25 @@ loginButtons.forEach(function (button) {
 
     if (currentUser) {
 
-        // Người dùng đã đăng nhập
+        const role =
+            getRoleInfo(currentUser.role);
 
-        button.href = "taikhoan.html";
 
-
-        // Biểu tượng theo role
-
-        let icon = "👤";
-
-        if (currentUser.role === "ADMIN") {
-            icon = "👑";
-        }
-
-        else if (currentUser.role === "ULTRA") {
-            icon = "⚡";
-        }
-
-        else if (currentUser.role === "MESSI") {
-            icon = "🐐";
-        }
-
-        else if (currentUser.role === "NPC") {
-            icon = "👤";
-        }
+        button.href =
+            "taikhoan.html";
 
 
         button.innerHTML =
-            `${icon} ${currentUser.name}`;
+            `${role.icon} ${currentUser.name}`;
+
 
     }
 
     else {
 
-        // Chưa đăng nhập
+        button.href =
+            "dangnhap.html";
 
-        button.href = "dangnhap.html";
 
         button.innerHTML =
             "👤 Đăng nhập";
@@ -150,8 +197,6 @@ if (loginForm) {
                 document.getElementById("loginError");
 
 
-            // Tìm tài khoản
-
             const account =
                 accounts.find(function (user) {
 
@@ -165,15 +210,11 @@ if (loginForm) {
 
             if (account) {
 
-                // Lưu tài khoản
-
                 localStorage.setItem(
                     "loggedInUser",
                     JSON.stringify(account)
                 );
 
-
-                // Chuyển tới trang tài khoản
 
                 window.location.href =
                     "taikhoan.html";
@@ -182,11 +223,15 @@ if (loginForm) {
 
             else {
 
-                errorMessage.textContent =
-                    "❌ Tài khoản hoặc mật khẩu không đúng.";
+                if (errorMessage) {
 
-                errorMessage.style.display =
-                    "block";
+                    errorMessage.textContent =
+                        "❌ Tài khoản hoặc mật khẩu không đúng.";
+
+                    errorMessage.style.display =
+                        "block";
+
+                }
 
             }
 
@@ -197,7 +242,7 @@ if (loginForm) {
 
 
 // ========================================
-// HIỂN THỊ THÔNG TIN TRANG TÀI KHOẢN
+// TRANG TÀI KHOẢN
 // ========================================
 
 const accountName =
@@ -206,6 +251,18 @@ const accountName =
 
 const accountRole =
     document.getElementById("accountRole");
+
+
+const accountUsername =
+    document.getElementById("accountUsername");
+
+
+const accountRoleDescription =
+    document.getElementById("accountRoleDescription");
+
+
+const accountRoleIcon =
+    document.getElementById("accountRoleIcon");
 
 
 if (accountName && accountRole) {
@@ -219,11 +276,56 @@ if (accountName && accountRole) {
 
     else {
 
+        const role =
+            getRoleInfo(currentUser.role);
+
+
+        // Tên
+
         accountName.textContent =
             currentUser.name;
 
+
+        // Role
+
         accountRole.textContent =
-            currentUser.role;
+            role.title;
+
+
+        // Username
+
+        if (accountUsername) {
+
+            accountUsername.textContent =
+                "@" + currentUser.username;
+
+        }
+
+
+        // Mô tả role
+
+        if (accountRoleDescription) {
+
+            accountRoleDescription.textContent =
+                role.description;
+
+        }
+
+
+        // Icon
+
+        if (accountRoleIcon) {
+
+            accountRoleIcon.textContent =
+                role.icon;
+
+        }
+
+
+        // Class role
+
+        accountRole.className =
+            "role-badge " + role.className;
 
     }
 
