@@ -5,42 +5,47 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Tài khoản - Lớp 9.27</title>
 
 
     <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+        href="https://fonts.googleapis.com">
 
     <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
 
-    <link rel="stylesheet"
-          href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css">
 
 </head>
+
 
 <body>
 
 
-    <!-- ================================ -->
-    <!-- THANH ĐIỀU HƯỚNG -->
-    <!-- ================================ -->
+    <!-- ================================= -->
+    <!-- NAVIGATION -->
+    <!-- ================================= -->
 
     <nav>
 
         <div class="nav-container">
 
 
-            <a class="logo"
-               href="index.html">
+            <a
+                class="logo"
+                href="index.html">
 
                 🌟 9.27
 
@@ -80,8 +85,7 @@
 
             <a
                 class="login-button"
-                href="taikhoan.html"
-            >
+                href="taikhoan.html">
 
                 👤 Tài khoản
 
@@ -94,9 +98,9 @@
 
 
 
-    <!-- ================================ -->
-    <!-- TRANG TÀI KHOẢN -->
-    <!-- ================================ -->
+    <!-- ================================= -->
+    <!-- ACCOUNT -->
+    <!-- ================================= -->
 
     <main class="login-page">
 
@@ -104,59 +108,41 @@
         <section class="account-card">
 
 
-            <!-- ICON -->
-
             <div
                 class="account-avatar"
-                id="accountRoleIcon"
-            >
+                id="accountRoleIcon">
 
                 👤
 
             </div>
 
 
-
-            <!-- TÊN -->
-
             <h1 id="accountName">
                 Tài khoản
             </h1>
 
 
-
-            <!-- USERNAME -->
-
             <p
                 class="account-username"
-                id="accountUsername"
-            >
+                id="accountUsername">
 
                 @username
 
             </p>
 
 
-
-            <!-- ROLE -->
-
             <div
                 id="accountRole"
-                class="role-badge role-npc"
-            >
+                class="role-badge role-npc">
 
                 NPC
 
             </div>
 
 
-
-            <!-- MÔ TẢ ROLE -->
-
             <p
                 class="account-role-description"
-                id="accountRoleDescription"
-            >
+                id="accountRoleDescription">
 
                 Thành viên
 
@@ -164,7 +150,9 @@
 
 
 
-            <!-- THÔNG TIN -->
+            <!-- ================================= -->
+            <!-- ACCOUNT INFO -->
+            <!-- ================================= -->
 
             <div class="account-info">
 
@@ -212,23 +200,146 @@
 
 
 
-            <!-- ĐĂNG XUẤT -->
+            <!-- ================================= -->
+            <!-- ADMIN PANEL -->
+            <!-- ================================= -->
+
+            <div
+                class="admin-panel"
+                id="adminPanel"
+                style="display: none;">
+
+
+                <div class="admin-panel-header">
+
+                    <span class="admin-panel-icon">
+                        👑
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Khu vực quản trị
+                        </h2>
+
+                        <p>
+                            Chỉ ADMIN mới có quyền sử dụng
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-actions">
+
+
+                    <a
+                        href="#"
+                        class="admin-action">
+
+                        <span>📢</span>
+
+                        <div>
+
+                            <strong>
+                                Quản lý thông báo
+                            </strong>
+
+                            <small>
+                                Đăng và quản lý thông báo
+                            </small>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="admin-action">
+
+                        <span>📚</span>
+
+                        <div>
+
+                            <strong>
+                                Quản lý bài tập
+                            </strong>
+
+                            <small>
+                                Đăng bài tập cho lớp
+                            </small>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="admin-action">
+
+                        <span>📁</span>
+
+                        <div>
+
+                            <strong>
+                                Quản lý tài liệu
+                            </strong>
+
+                            <small>
+                                Đăng tài liệu học tập
+                            </small>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="admin-action">
+
+                        <span>📸</span>
+
+                        <div>
+
+                            <strong>
+                                Quản lý hoạt động
+                            </strong>
+
+                            <small>
+                                Đăng ảnh và hoạt động lớp
+                            </small>
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- LOGOUT -->
+            <!-- ================================= -->
 
             <button
                 class="login-submit logout-button"
-                id="logoutButton"
-            >
+                id="logoutButton">
 
                 🚪 Đăng xuất
 
             </button>
 
 
-
             <a
                 class="back-home"
-                href="index.html"
-            >
+                href="index.html">
 
                 ← Về trang chủ
 
@@ -237,12 +348,13 @@
 
         </section>
 
-
     </main>
 
 
 
+    <!-- ================================= -->
     <!-- FOOTER -->
+    <!-- ================================= -->
 
     <footer>
 
@@ -253,44 +365,7 @@
     </footer>
 
 
-
     <script src="script.js"></script>
-
-
-    <!-- HIỂN THỊ THÊM THÔNG TIN -->
-
-    <script>
-
-        const savedAccount =
-            localStorage.getItem("loggedInUser");
-
-
-        if (savedAccount) {
-
-            const user =
-                JSON.parse(savedAccount);
-
-
-            document.getElementById(
-                "accountName2"
-            ).textContent =
-                user.name;
-
-
-            document.getElementById(
-                "accountUsername2"
-            ).textContent =
-                "@" + user.username;
-
-
-            document.getElementById(
-                "accountRole2"
-            ).textContent =
-                user.role;
-
-        }
-
-    </script>
 
 </body>
 
