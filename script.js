@@ -73,7 +73,7 @@ const roleInfo = {
 
 
 // ========================================
-// LẤY TÀI KHOẢN ĐANG ĐĂNG NHẬP
+// LẤY USER ĐANG ĐĂNG NHẬP
 // ========================================
 
 const savedUser =
@@ -88,9 +88,7 @@ if (savedUser) {
 
         currentUser = JSON.parse(savedUser);
 
-    }
-
-    catch (error) {
+    } catch (error) {
 
         localStorage.removeItem("loggedInUser");
 
@@ -100,7 +98,7 @@ if (savedUser) {
 
 
 // ========================================
-// LẤY THÔNG TIN ROLE
+// HÀM LẤY THÔNG TIN ROLE
 // ========================================
 
 function getRoleInfo(role) {
@@ -124,7 +122,21 @@ function getRoleInfo(role) {
 
 
 // ========================================
-// ĐỔI NÚT ĐĂNG NHẬP TRÊN MENU
+// KIỂM TRA QUYỀN ADMIN
+// ========================================
+
+function isAdmin() {
+
+    return (
+        currentUser &&
+        currentUser.role === "ADMIN"
+    );
+
+}
+
+
+// ========================================
+// MENU ĐĂNG NHẬP / TÀI KHOẢN
 // ========================================
 
 const loginButtons =
@@ -145,7 +157,6 @@ loginButtons.forEach(function (button) {
 
         button.innerHTML =
             `${role.icon} ${currentUser.name}`;
-
 
     }
 
@@ -248,18 +259,14 @@ if (loginForm) {
 const accountName =
     document.getElementById("accountName");
 
-
 const accountRole =
     document.getElementById("accountRole");
-
 
 const accountUsername =
     document.getElementById("accountUsername");
 
-
 const accountRoleDescription =
     document.getElementById("accountRoleDescription");
-
 
 const accountRoleIcon =
     document.getElementById("accountRoleIcon");
@@ -280,19 +287,13 @@ if (accountName && accountRole) {
             getRoleInfo(currentUser.role);
 
 
-        // Tên
-
         accountName.textContent =
             currentUser.name;
 
 
-        // Role
-
         accountRole.textContent =
             role.title;
 
-
-        // Username
 
         if (accountUsername) {
 
@@ -302,8 +303,6 @@ if (accountName && accountRole) {
         }
 
 
-        // Mô tả role
-
         if (accountRoleDescription) {
 
             accountRoleDescription.textContent =
@@ -311,8 +310,6 @@ if (accountName && accountRole) {
 
         }
 
-
-        // Icon
 
         if (accountRoleIcon) {
 
@@ -322,10 +319,77 @@ if (accountName && accountRole) {
         }
 
 
-        // Class role
-
         accountRole.className =
             "role-badge " + role.className;
+
+    }
+
+}
+
+
+// ========================================
+// THÔNG TIN CHI TIẾT TÀI KHOẢN
+// ========================================
+
+if (currentUser) {
+
+    const accountName2 =
+        document.getElementById("accountName2");
+
+    const accountUsername2 =
+        document.getElementById("accountUsername2");
+
+    const accountRole2 =
+        document.getElementById("accountRole2");
+
+
+    if (accountName2) {
+
+        accountName2.textContent =
+            currentUser.name;
+
+    }
+
+
+    if (accountUsername2) {
+
+        accountUsername2.textContent =
+            "@" + currentUser.username;
+
+    }
+
+
+    if (accountRole2) {
+
+        accountRole2.textContent =
+            currentUser.role;
+
+    }
+
+}
+
+
+// ========================================
+// KHU VỰC QUẢN TRỊ
+// ========================================
+
+const adminPanel =
+    document.getElementById("adminPanel");
+
+
+if (adminPanel) {
+
+    if (isAdmin()) {
+
+        adminPanel.style.display =
+            "block";
+
+    }
+
+    else {
+
+        adminPanel.style.display =
+            "none";
 
     }
 
