@@ -147,6 +147,12 @@ nav {
     background: #eff6ff;
 }
 
+.active-login {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
 
 /* ============================= */
 /* HERO */
@@ -215,7 +221,9 @@ nav {
 }
 
 
+/* ============================= */
 /* BUTTON */
+/* ============================= */
 
 .hero-buttons {
     display: flex;
@@ -689,6 +697,167 @@ section a:hover {
 
 
 /* ============================= */
+/* TRANG ĐĂNG NHẬP */
+/* ============================= */
+
+.login-page {
+    min-height: calc(100vh - 150px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+
+    text-align: center;
+
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 22px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.login-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 20px;
+
+    font-size: 32px;
+}
+
+.login-card h1 {
+    margin: 0;
+
+    color: #172554;
+
+    font-size: 28px;
+}
+
+.login-subtitle {
+    margin: 8px 0 28px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.form-group {
+    text-align: left;
+
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #334155;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    font-family: "Poppins", Arial, sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+
+    background: white;
+}
+
+.form-group input:focus {
+    border-color: #3b82f6;
+
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.login-submit {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-family: "Poppins", Arial, sans-serif;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.login-submit:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.25);
+}
+
+.login-note {
+    margin: 20px 0 15px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.back-home {
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.back-home:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================= */
 /* FOOTER */
 /* ============================= */
 
@@ -851,5 +1020,9 @@ footer {
 
     .welcome-content h2 {
         font-size: 18px;
+    }
+
+    .login-card {
+        padding: 25px 20px;
     }
 }
