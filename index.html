@@ -7,55 +7,344 @@
 
     <title>Lớp 9.27</title>
 
+    <!-- Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- THANH ĐIỀU HƯỚNG -->
+
     <nav>
-        <a href="index.html">🏠 Trang chủ</a>
-        <a href="thongbao.html">📢 Thông báo</a>
-        <a href="hoctap.html">📚 Học tập</a>
-        <a href="thanhvien.html">👥 Thành viên</a>
-        <a href="hoatdong.html">📸 Hoạt động</a>
+
+        <div class="nav-container">
+
+            <a class="logo" href="index.html">
+                🌟 9.27
+            </a>
+
+            <div class="nav-links">
+
+                <a class="active" href="index.html">
+                    🏠 <span>Trang chủ</span>
+                </a>
+
+                <a href="thongbao.html">
+                    📢 <span>Thông báo</span>
+                </a>
+
+                <a href="hoctap.html">
+                    📚 <span>Học tập</span>
+                </a>
+
+                <a href="thanhvien.html">
+                    👥 <span>Thành viên</span>
+                </a>
+
+                <a href="hoatdong.html">
+                    📸 <span>Hoạt động</span>
+                </a>
+
+            </div>
+
+            <a class="login-button" href="#">
+                👤 Đăng nhập
+            </a>
+
+        </div>
+
     </nav>
 
-    <header>
-        <h1>🌟 LỚP 9.27 🌟</h1>
-        <p>Đoàn kết - Học tập - Vươn lên</p>
+
+    <!-- PHẦN GIỚI THIỆU -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                🎓 WEBSITE CHÍNH THỨC CỦA LỚP
+            </div>
+
+            <h1>
+                🌟 LỚP 9.27 🌟
+            </h1>
+
+            <p>
+                Đoàn kết - Học tập - Vươn lên
+            </p>
+
+            <div class="hero-buttons">
+
+                <a class="button primary-button" href="thanhvien.html">
+                    👥 Xem thành viên
+                </a>
+
+                <a class="button secondary-button" href="hoctap.html">
+                    📚 Góc học tập
+                </a>
+
+            </div>
+
+        </div>
+
     </header>
+
 
     <main>
 
-        <section>
-            <h2>📢 Thông báo mới nhất</h2>
-            <p>Chào mừng các bạn đến với website lớp 9.27!</p>
+        <!-- THỐNG KÊ -->
+
+        <section class="stats-section">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div>
+                    <strong>46</strong>
+                    <span>Thành viên</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+                <div>
+                    <strong>0</strong>
+                    <span>Bài tập</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📢
+                </div>
+
+                <div>
+                    <strong>0</strong>
+                    <span>Thông báo</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📸
+                </div>
+
+                <div>
+                    <strong>0</strong>
+                    <span>Hoạt động</span>
+                </div>
+
+            </div>
+
         </section>
 
+
+        <!-- THÔNG BÁO -->
+
         <section>
-            <h2>📚 Góc học tập</h2>
-            <p>Nơi chia sẻ tài liệu và bài tập của lớp.</p>
+
+            <div class="section-title">
+
+                <div>
+                    <span class="section-icon">📢</span>
+
+                    <div>
+                        <h2>Thông báo mới nhất</h2>
+                        <p>Cập nhật những thông tin mới của lớp</p>
+                    </div>
+                </div>
+
+                <a class="view-all" href="thongbao.html">
+                    Xem tất cả →
+                </a>
+
+            </div>
+
+
+            <div class="empty-card">
+
+                <div class="empty-icon">
+                    📢
+                </div>
+
+                <h3>Chưa có thông báo mới</h3>
+
+                <p>
+                    Các thông báo mới của lớp sẽ xuất hiện tại đây.
+                </p>
+
+            </div>
+
         </section>
 
-        <section>
-            <h2>👥 Thành viên</h2>
-            <p>Lớp 9.27 hiện có 46 thành viên.</p>
 
-            <p>
-                <a href="thanhvien.html">👉 Xem danh sách thành viên</a>
-            </p>
+        <!-- BÀI TẬP -->
+
+        <section>
+
+            <div class="section-title">
+
+                <div>
+                    <span class="section-icon">📚</span>
+
+                    <div>
+                        <h2>Bài tập mới</h2>
+                        <p>Các bài tập và tài liệu học tập</p>
+                    </div>
+                </div>
+
+                <a class="view-all" href="hoctap.html">
+                    Xem tất cả →
+                </a>
+
+            </div>
+
+
+            <div class="subject-grid">
+
+                <div class="subject-card">
+
+                    <div class="subject-icon">
+                        ➗
+                    </div>
+
+                    <div>
+                        <h3>Toán</h3>
+                        <p>Chưa có bài tập</p>
+                    </div>
+
+                </div>
+
+
+                <div class="subject-card">
+
+                    <div class="subject-icon">
+                        🇬🇧
+                    </div>
+
+                    <div>
+                        <h3>Tiếng Anh</h3>
+                        <p>Chưa có bài tập</p>
+                    </div>
+
+                </div>
+
+
+                <div class="subject-card">
+
+                    <div class="subject-icon">
+                        📖
+                    </div>
+
+                    <div>
+                        <h3>Ngữ văn</h3>
+                        <p>Chưa có bài tập</p>
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <section>
-            <h2>📸 Hoạt động</h2>
-            <p>Xem những hình ảnh và hoạt động đáng nhớ của lớp.</p>
 
-            <p>
-                <a href="hoatdong.html">👉 Xem hoạt động của lớp</a>
-            </p>
+        <!-- HOẠT ĐỘNG -->
+
+        <section>
+
+            <div class="section-title">
+
+                <div>
+                    <span class="section-icon">📸</span>
+
+                    <div>
+                        <h2>Hoạt động lớp</h2>
+                        <p>Những khoảnh khắc đáng nhớ</p>
+                    </div>
+                </div>
+
+                <a class="view-all" href="hoatdong.html">
+                    Xem tất cả →
+                </a>
+
+            </div>
+
+
+            <div class="empty-card">
+
+                <div class="empty-icon">
+                    📸
+                </div>
+
+                <h3>Chưa có hoạt động</h3>
+
+                <p>
+                    Những hình ảnh và hoạt động của lớp sẽ được cập nhật tại đây.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GIỚI THIỆU -->
+
+        <section class="welcome-section">
+
+            <div class="welcome-content">
+
+                <div class="welcome-icon">
+                    💙
+                </div>
+
+                <div>
+
+                    <h2>Chào mừng đến với lớp 9.27!</h2>
+
+                    <p>
+                        Đây là không gian chung của tập thể 9.27,
+                        nơi chúng ta cùng học tập, chia sẻ và lưu giữ
+                        những kỷ niệm đáng nhớ.
+                    </p>
+
+                </div>
+
+            </div>
+
         </section>
 
     </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            🌟 Lớp 9.27 • Đoàn kết - Học tập - Vươn lên
+        </p>
+
+    </footer>
 
 </body>
 
