@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tài khoản - Lớp 9.27</title>
+
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- MENU -->
+
+    <nav>
+
+        <div class="nav-container">
+
+
+            <a class="logo"
+               href="index.html">
+
+                🌟 9.27
+
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    🏠 <span>Trang chủ</span>
+                </a>
+
+                <a href="thongbao.html">
+                    📢 <span>Thông báo</span>
+                </a>
+
+                <a href="hoctap.html">
+                    📚 <span>Học tập</span>
+                </a>
+
+                <a href="thanhvien.html">
+                    👥 <span>Thành viên</span>
+                </a>
+
+                <a href="hoatdong.html">
+                    📸 <span>Hoạt động</span>
+                </a>
+
+            </div>
+
+
+            <a
+                class="login-button"
+                href="taikhoan.html"
+            >
+
+                👤 Tài khoản
+
+            </a>
+
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- TÀI KHOẢN -->
+
+    <main class="login-page">
+
+
+        <section class="login-card">
+
+
+            <div class="login-icon">
+                👤
+            </div>
+
+
+            <h1 id="accountName">
+                Tài khoản
+            </h1>
+
+
+            <p class="login-subtitle">
+
+                Thông tin thành viên
+
+            </p>
+
+
+
+            <div class="empty-card">
+
+
+                <h3 id="accountRole">
+                    ROLE
+                </h3>
+
+
+                <p>
+                    🏷️ Cấp bậc tài khoản
+                </p>
+
+
+            </div>
+
+
+
+            <button
+                class="login-submit"
+                id="logoutButton"
+            >
+
+                🚪 Đăng xuất
+
+            </button>
+
+
+            <br><br>
+
+
+            <a
+                class="back-home"
+                href="index.html"
+            >
+
+                ← Về trang chủ
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        <p>
+
+            🌟 Lớp 9.27 • Đoàn kết - Học tập - Vươn lên
+
+        </p>
+
+    </footer>
+
+
+
+    <script>
+
+        // Lấy tài khoản đã đăng nhập
+
+        const savedUser =
+            localStorage.getItem("loggedInUser");
+
+
+        // Nếu chưa đăng nhập
+        if (!savedUser) {
+
+            window.location.href =
+                "dangnhap.html";
+
+        }
+
+
+        const user =
+            JSON.parse(savedUser);
+
+
+        // Hiển thị thông tin
+
+        document.getElementById("accountName")
+            .textContent = user.name;
+
+
+        document.getElementById("accountRole")
+            .textContent = user.role;
+
+
+
+        // Đăng xuất
+
+        document.getElementById("logoutButton")
+            .addEventListener("click", function () {
+
+                localStorage.removeItem(
+                    "loggedInUser"
+                );
+
+                window.location.href =
+                    "index.html";
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>
