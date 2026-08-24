@@ -1,3 +1,7 @@
+/* ========================================
+   RESET
+======================================== */
+
 * {
     box-sizing: border-box;
 }
@@ -8,15 +12,12 @@ html {
 
 body {
     margin: 0;
-
     font-family: "Poppins", Arial, sans-serif;
-
-    color: #172033;
 
     background-image:
         linear-gradient(
-            rgba(15, 23, 42, 0.42),
-            rgba(15, 23, 42, 0.42)
+            rgba(15, 23, 42, 0.55),
+            rgba(15, 23, 42, 0.55)
         ),
         url("hinhnen9.27.jpg");
 
@@ -25,38 +26,40 @@ body {
     background-attachment: fixed;
 
     min-height: 100vh;
+
+    color: #1e293b;
 }
 
 
-/* ============================= */
-/* THANH MENU */
-/* ============================= */
+/* ========================================
+   NAVIGATION
+======================================== */
 
 nav {
     position: sticky;
     top: 0;
-
     z-index: 1000;
 
-    background: rgba(15, 23, 42, 0.88);
+    background: rgba(15, 23, 42, 0.92);
 
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+
 .nav-container {
-    max-width: 1200px;
+    max-width: 1250px;
 
     margin: auto;
 
-    min-height: 70px;
-
-    padding: 0 20px;
+    padding: 12px 20px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -71,9 +74,16 @@ nav {
     text-decoration: none;
 
     font-size: 22px;
+
     font-weight: 800;
 
     white-space: nowrap;
+
+    transition: 0.25s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 
@@ -81,10 +91,14 @@ nav {
 
 .nav-links {
     display: flex;
+
     align-items: center;
+
+    justify-content: center;
 
     gap: 5px;
 }
+
 
 .nav-links a {
     color: #e2e8f0;
@@ -96,136 +110,140 @@ nav {
     border-radius: 10px;
 
     font-size: 14px;
+
     font-weight: 600;
 
-    transition: 0.25s ease;
+    transition: all 0.25s ease;
 }
 
-.nav-links a:hover {
-    color: white;
 
-    background: rgba(255, 255, 255, 0.1);
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
 
     transform: translateY(-1px);
 }
 
+
 .nav-links a.active {
+    background: rgba(59, 130, 246, 0.85);
+
     color: white;
 
-    background: rgba(59, 130, 246, 0.8);
-
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    box-shadow:
+        0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 
-/* NÚT ĐĂNG NHẬP */
+/* LOGIN BUTTON */
 
 .login-button {
-    color: #1e3a8a;
-
-    background: white;
+    color: white;
 
     text-decoration: none;
 
-    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    padding: 10px 15px;
 
     border-radius: 10px;
 
     font-size: 14px;
+
     font-weight: 700;
 
     white-space: nowrap;
 
-    transition: 0.25s ease;
+    transition: 0.25s;
 }
+
 
 .login-button:hover {
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.22);
 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-
-    background: #eff6ff;
-}
-
-.active-login {
-    background: #dbeafe;
-
-    color: #1d4ed8;
+    transform: translateY(-1px);
 }
 
 
-/* ============================= */
-/* HERO */
-/* ============================= */
+/* ========================================
+   HERO
+======================================== */
 
 .hero {
-    min-height: 500px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 70px 20px;
+    padding: 80px 20px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(30, 64, 175, 0.82),
-            rgba(37, 99, 235, 0.55)
+            rgba(37, 99, 235, 0.88),
+            rgba(30, 64, 175, 0.82)
         );
 
     color: white;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
+
 .hero-content {
-    max-width: 800px;
+    max-width: 900px;
+
+    margin: auto;
 }
+
 
 .hero-badge {
     display: inline-block;
 
     padding: 8px 15px;
 
-    margin-bottom: 20px;
-
     border-radius: 999px;
 
-    background: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.15);
 
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
     font-size: 13px;
-    font-weight: 700;
 
-    letter-spacing: 0.5px;
+    font-weight: 600;
+
+    margin-bottom: 18px;
 }
+
 
 .hero h1 {
     margin: 0;
 
-    font-size: clamp(42px, 7vw, 72px);
+    font-size: clamp(38px, 6vw, 64px);
 
     font-weight: 800;
 
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
+
 
 .hero p {
-    margin: 18px 0 30px;
+    margin-top: 12px;
 
-    font-size: 20px;
+    font-size: 18px;
 
-    color: #e0ecff;
+    opacity: 0.95;
 }
 
 
-/* ============================= */
-/* BUTTON */
-/* ============================= */
+/* ========================================
+   HERO BUTTONS
+======================================== */
 
 .hero-buttons {
+    margin-top: 28px;
+
     display: flex;
 
     justify-content: center;
@@ -235,55 +253,49 @@ nav {
     flex-wrap: wrap;
 }
 
+
 .button {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 13px 20px;
-
-    border-radius: 12px;
+    display: inline-block;
 
     text-decoration: none;
 
+    padding: 12px 20px;
+
+    border-radius: 12px;
+
     font-weight: 700;
 
-    transition: 0.25s ease;
+    transition: 0.25s;
 }
+
 
 .primary-button {
-    color: #1e3a8a;
-
     background: white;
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    color: #2563eb;
 }
 
-.primary-button:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
-}
 
 .secondary-button {
+    background: rgba(255, 255, 255, 0.14);
+
     color: white;
 
-    background: rgba(255, 255, 255, 0.12);
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.secondary-button:hover {
-    background: rgba(255, 255, 255, 0.2);
-
-    transform: translateY(-3px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 
-/* ============================= */
-/* MAIN */
-/* ============================= */
+.button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
 
 main {
     max-width: 1100px;
@@ -294,107 +306,36 @@ main {
 }
 
 
-/* ============================= */
-/* THỐNG KÊ */
-/* ============================= */
-
-.stats-section {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 15px;
-
-    padding: 0;
-
-    background: none;
-
-    box-shadow: none;
-}
-
-.stat-card {
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    padding: 18px;
-
-    background: rgba(255, 255, 255, 0.94);
-
-    border-radius: 15px;
-
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-
-    transition: 0.25s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-4px);
-}
-
-.stat-icon {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 12px;
-
-    background: #eff6ff;
-
-    font-size: 22px;
-}
-
-.stat-card strong {
-    display: block;
-
-    font-size: 22px;
-
-    color: #1e3a8a;
-}
-
-.stat-card span {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #64748b;
-
-    font-size: 13px;
-}
-
-
-/* ============================= */
-/* SECTION */
-/* ============================= */
-
 section {
     background: rgba(255, 255, 255, 0.94);
 
-    padding: 25px;
-
-    margin-bottom: 20px;
-
     border-radius: 18px;
 
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 28px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.12);
 }
+
+
+/* ========================================
+   SECTION TITLE
+======================================== */
 
 .section-title {
     display: flex;
 
-    align-items: center;
     justify-content: space-between;
+
+    align-items: center;
 
     gap: 15px;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
+
 
 .section-title > div {
     display: flex;
@@ -404,82 +345,76 @@ section {
     gap: 13px;
 }
 
+
 .section-icon {
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: #eff6ff;
-
-    border-radius: 12px;
-
-    font-size: 21px;
+    font-size: 30px;
 }
+
 
 .section-title h2 {
     margin: 0;
 
-    color: #172554;
+    font-size: 22px;
 
-    font-size: 20px;
+    font-weight: 800;
 }
 
+
 .section-title p {
-    margin: 4px 0 0;
+    margin: 3px 0 0;
 
     color: #64748b;
 
     font-size: 13px;
 }
 
-.view-all {
-    color: #2563eb;
 
+.view-all {
     text-decoration: none;
 
-    font-size: 14px;
+    color: #2563eb;
 
     font-weight: 700;
 
-    white-space: nowrap;
+    font-size: 14px;
 }
+
 
 .view-all:hover {
     text-decoration: underline;
 }
 
 
-/* ============================= */
-/* EMPTY CARD */
-/* ============================= */
+/* ========================================
+   EMPTY CARD
+======================================== */
 
 .empty-card {
     text-align: center;
 
-    padding: 35px 20px;
+    padding: 40px 20px;
+
+    border-radius: 14px;
 
     background: #f8fafc;
 
     border: 1px dashed #cbd5e1;
-
-    border-radius: 14px;
 }
+
 
 .empty-icon {
-    font-size: 35px;
+    font-size: 42px;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
+
 
 .empty-card h3 {
-    margin: 0 0 8px;
+    margin: 8px 0;
 
-    color: #334155;
+    font-size: 18px;
 }
+
 
 .empty-card p {
     margin: 0;
@@ -490,70 +425,141 @@ section {
 }
 
 
-/* ============================= */
-/* MÔN HỌC */
-/* ============================= */
+/* ========================================
+   STATS
+======================================== */
 
-.subject-grid {
+.stats-section {
+    background: transparent;
+
+    box-shadow: none;
+
+    padding: 0;
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
     gap: 15px;
 }
 
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.94);
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.1);
+
+    transition: 0.25s;
+}
+
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+
+.stat-icon {
+    font-size: 30px;
+}
+
+
+.stat-card strong {
+    display: block;
+
+    font-size: 25px;
+}
+
+
+.stat-card span {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   SUBJECTS
+======================================== */
+
+.subject-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
 .subject-card {
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
     display: flex;
 
     align-items: center;
 
     gap: 13px;
 
-    padding: 18px;
-
-    background: #f8fafc;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 14px;
-
-    transition: 0.25s ease;
+    transition: 0.25s;
 }
+
 
 .subject-card:hover {
     transform: translateY(-3px);
 
     border-color: #93c5fd;
 
-    background: #eff6ff;
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.1);
 }
+
 
 .subject-icon {
     width: 45px;
+
     height: 45px;
 
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
-    background: white;
+    justify-content: center;
 
     border-radius: 12px;
 
-    font-size: 21px;
+    background: #eff6ff;
+
+    font-size: 23px;
 }
+
 
 .subject-card h3 {
     margin: 0;
 
     font-size: 16px;
-
-    color: #1e3a8a;
 }
 
+
 .subject-card p {
-    margin: 4px 0 0;
+    margin: 3px 0 0;
 
     color: #64748b;
 
@@ -561,18 +567,59 @@ section {
 }
 
 
-/* ============================= */
-/* WELCOME */
-/* ============================= */
+/* ========================================
+   MEMBER LIST
+======================================== */
+
+.member-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+
+.member {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 11px;
+
+    padding: 13px 15px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+
+.member:hover {
+    background: #eff6ff;
+
+    border-color: #93c5fd;
+
+    transform: translateX(3px);
+}
+
+
+/* ========================================
+   WELCOME
+======================================== */
 
 .welcome-section {
     background:
         linear-gradient(
             135deg,
             rgba(239, 246, 255, 0.96),
-            rgba(219, 234, 254, 0.96)
+            rgba(248, 250, 252, 0.96)
         );
 }
+
 
 .welcome-content {
     display: flex;
@@ -582,233 +629,169 @@ section {
     gap: 18px;
 }
 
+
 .welcome-icon {
-    width: 60px;
-    height: 60px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: white;
-
-    border-radius: 16px;
-
-    font-size: 28px;
+    font-size: 45px;
 }
+
 
 .welcome-content h2 {
-    margin: 0 0 8px;
+    margin: 0 0 5px;
 
-    color: #1e3a8a;
+    font-size: 22px;
 }
+
 
 .welcome-content p {
     margin: 0;
 
-    color: #475569;
+    color: #64748b;
 
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 
-/* ============================= */
-/* THÀNH VIÊN */
-/* ============================= */
-
-.member-list {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 15px;
-
-    margin-top: 20px;
-}
-
-.member {
-    background: #f8fafc;
-
-    padding: 15px;
-
-    border-radius: 12px;
-
-    font-weight: 600;
-
-    color: #1e3a8a;
-
-    border: 1px solid #dbeafe;
-
-    transition: 0.25s ease;
-}
-
-.member:hover {
-    transform: translateY(-4px);
-
-    background: #eff6ff;
-
-    border-color: #60a5fa;
-
-    box-shadow: 0 7px 16px rgba(37, 99, 235, 0.12);
-}
-
-
-/* ============================= */
-/* THÔNG BÁO */
-/* ============================= */
-
-.notice {
-    background: #eff6ff;
-
-    border-left: 5px solid #2563eb;
-
-    padding: 18px;
-
-    border-radius: 10px;
-
-    margin-top: 15px;
-}
-
-.notice h3 {
-    margin-top: 0;
-
-    color: #1e3a8a;
-}
-
-
-/* ============================= */
-/* LINK */
-/* ============================= */
-
-section a {
-    color: #2563eb;
-
-    font-weight: 700;
-
-    text-decoration: none;
-}
-
-section a:hover {
-    text-decoration: underline;
-}
-
-
-/* ============================= */
-/* TRANG ĐĂNG NHẬP */
-/* ============================= */
+/* ========================================
+   LOGIN PAGE
+======================================== */
 
 .login-page {
     min-height: calc(100vh - 150px);
 
     display: flex;
-    align-items: center;
+
     justify-content: center;
 
-    padding: 40px 20px;
+    align-items: center;
+
+    padding-top: 40px;
+
+    padding-bottom: 40px;
 }
 
-.login-card {
+
+.login-card,
+.account-card {
     width: 100%;
-    max-width: 430px;
 
-    text-align: center;
+    max-width: 480px;
 
-    padding: 35px;
-
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 0.97);
 
     border-radius: 22px;
 
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+    padding: 38px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.2);
 }
 
-.login-icon {
-    width: 70px;
-    height: 70px;
+
+/* LOGIN ICON */
+
+.login-icon,
+.account-avatar {
+    width: 75px;
+
+    height: 75px;
 
     margin: 0 auto 18px;
 
+    border-radius: 50%;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
+    font-size: 36px;
 
     background: #eff6ff;
 
-    border-radius: 20px;
+    border: 4px solid white;
 
-    font-size: 32px;
+    box-shadow:
+        0 5px 20px rgba(37, 99, 235, 0.15);
 }
 
-.login-card h1 {
+
+.login-card h1,
+.account-card h1 {
     margin: 0;
 
-    color: #172554;
-
     font-size: 28px;
+
+    font-weight: 800;
 }
 
+
 .login-subtitle {
-    margin: 8px 0 28px;
+    margin: 7px 0 25px;
 
     color: #64748b;
 
     font-size: 14px;
 }
 
+
+/* ========================================
+   FORM
+======================================== */
+
 .form-group {
     text-align: left;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
+
 
 .form-group label {
     display: block;
 
     margin-bottom: 7px;
 
-    color: #334155;
-
     font-size: 14px;
-    font-weight: 600;
+
+    font-weight: 700;
 }
+
 
 .form-group input {
     width: 100%;
 
     padding: 13px 14px;
 
-    border: 1px solid #cbd5e1;
-
     border-radius: 11px;
+
+    border: 1px solid #cbd5e1;
 
     outline: none;
 
-    font-family: "Poppins", Arial, sans-serif;
+    font-family: inherit;
 
     font-size: 14px;
 
     transition: 0.2s;
-
-    background: white;
 }
+
 
 .form-group input:focus {
     border-color: #3b82f6;
 
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.12);
 }
+
 
 .login-submit {
     width: 100%;
 
-    margin-top: 5px;
+    border: none;
 
     padding: 13px;
-
-    border: none;
 
     border-radius: 11px;
 
@@ -816,9 +799,10 @@ section a:hover {
 
     color: white;
 
-    font-family: "Poppins", Arial, sans-serif;
+    font-family: inherit;
 
     font-size: 15px;
+
     font-weight: 700;
 
     cursor: pointer;
@@ -826,23 +810,29 @@ section a:hover {
     transition: 0.25s;
 }
 
+
 .login-submit:hover {
     background: #1d4ed8;
 
     transform: translateY(-2px);
 
-    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.25);
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.25);
 }
+
 
 .login-note {
-    margin: 20px 0 15px;
-
-    color: #64748b;
+    color: #94a3b8;
 
     font-size: 12px;
+
+    margin: 17px 0;
 }
 
+
 .back-home {
+    display: inline-block;
+
     color: #2563eb;
 
     text-decoration: none;
@@ -850,153 +840,279 @@ section a:hover {
     font-size: 14px;
 
     font-weight: 600;
+
+    margin-top: 15px;
 }
+
 
 .back-home:hover {
     text-decoration: underline;
 }
 
 
-/* ============================= */
-/* FOOTER */
-/* ============================= */
+/* ========================================
+   ACCOUNT
+======================================== */
 
-footer {
-    margin-top: 40px;
+.account-card {
+    max-width: 520px;
+}
 
-    padding: 25px 20px;
 
-    text-align: center;
+.account-avatar {
+    background: #f8fafc;
 
-    background: rgba(15, 23, 42, 0.9);
+    font-size: 40px;
 
-    color: #cbd5e1;
+    transition: 0.3s;
+}
+
+
+.account-username {
+    margin: 4px 0 15px;
+
+    color: #64748b;
 
     font-size: 14px;
 }
 
 
-/* ============================= */
-/* TABLET */
-/* ============================= */
+/* ROLE BADGE */
 
-@media (max-width: 1000px) {
+.role-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 7px 18px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 5px;
+}
+
+
+.account-role-description {
+    margin: 4px 0 25px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* ADMIN */
+
+.role-admin {
+    background: #fef3c7;
+
+    color: #92400e;
+
+    border: 1px solid #fcd34d;
+
+    box-shadow:
+        0 4px 15px rgba(245, 158, 11, 0.18);
+}
+
+
+/* ULTRA */
+
+.role-ultra {
+    background: #ede9fe;
+
+    color: #6d28d9;
+
+    border: 1px solid #c4b5fd;
+
+    box-shadow:
+        0 4px 15px rgba(124, 58, 237, 0.18);
+}
+
+
+/* MESSI */
+
+.role-messi {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+    border: 1px solid #93c5fd;
+
+    box-shadow:
+        0 4px 15px rgba(37, 99, 235, 0.18);
+}
+
+
+/* NPC */
+
+.role-npc {
+    background: #f1f5f9;
+
+    color: #475569;
+
+    border: 1px solid #cbd5e1;
+}
+
+
+/* ACCOUNT INFO */
+
+.account-info {
+    margin-bottom: 22px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    text-align: left;
+}
+
+
+.account-info-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 13px 16px;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    font-size: 13px;
+}
+
+
+.account-info-row:last-child {
+    border-bottom: none;
+}
+
+
+.account-info-row span {
+    color: #64748b;
+}
+
+
+.account-info-row strong {
+    text-align: right;
+
+    word-break: break-word;
+}
+
+
+/* LOGOUT */
+
+.logout-button {
+    background: #dc2626;
+}
+
+
+.logout-button:hover {
+    background: #b91c1c;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    text-align: center;
+
+    color: white;
+
+    padding: 25px 20px;
+
+    background: rgba(15, 23, 42, 0.88);
+
+    margin-top: 40px;
+}
+
+
+footer p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 900px) {
 
     .nav-container {
         flex-wrap: wrap;
 
         justify-content: center;
+    }
 
-        padding: 12px 15px;
+    .logo {
+        width: 100%;
+
+        text-align: center;
     }
 
     .nav-links {
-        order: 3;
-
-        width: 100%;
-
-        justify-content: center;
-
         flex-wrap: wrap;
     }
 
     .stats-section {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .member-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 
-/* ============================= */
-/* ĐIỆN THOẠI */
-/* ============================= */
-
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     .nav-container {
-        gap: 10px;
-    }
-
-    .logo {
-        font-size: 19px;
-    }
-
-    .login-button {
-        padding: 8px 12px;
-
-        font-size: 13px;
+        padding: 10px;
     }
 
     .nav-links a {
         padding: 8px 9px;
 
-        font-size: 13px;
+        font-size: 12px;
+    }
+
+    .login-button {
+        font-size: 12px;
+
+        padding: 8px 10px;
     }
 
     .hero {
-        min-height: 430px;
-
-        padding: 55px 15px;
-    }
-
-    .hero h1 {
-        font-size: 42px;
-
-        letter-spacing: -1px;
+        padding: 55px 18px;
     }
 
     .hero p {
-        font-size: 17px;
+        font-size: 15px;
     }
 
     main {
-        margin-top: 20px;
-
-        padding: 0 10px;
+        padding: 0 12px;
     }
 
     section {
-        padding: 18px;
-
-        border-radius: 15px;
+        padding: 20px;
     }
 
     .stats-section {
-        grid-template-columns: 1fr 1fr;
-
-        gap: 10px;
-    }
-
-    .stat-card {
-        padding: 13px;
-
-        gap: 8px;
-    }
-
-    .stat-icon {
-        width: 40px;
-        height: 40px;
-
-        font-size: 18px;
-    }
-
-    .stat-card strong {
-        font-size: 19px;
-    }
-
-    .section-title {
-        align-items: flex-start;
-    }
-
-    .section-title h2 {
-        font-size: 17px;
-    }
-
-    .view-all {
-        font-size: 12px;
+        grid-template-columns: 1fr;
     }
 
     .subject-grid {
@@ -1007,22 +1123,29 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .section-title {
+        align-items: flex-start;
+    }
+
     .welcome-content {
         align-items: flex-start;
     }
 
-    .welcome-icon {
-        width: 48px;
-        height: 48px;
-
-        font-size: 22px;
+    .login-card,
+    .account-card {
+        padding: 28px 20px;
     }
 
-    .welcome-content h2 {
-        font-size: 18px;
+    .account-info-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
     }
 
-    .login-card {
-        padding: 25px 20px;
+    .account-info-row strong {
+        text-align: left;
     }
+
 }
